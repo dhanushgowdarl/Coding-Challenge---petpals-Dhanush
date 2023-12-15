@@ -2,6 +2,8 @@ package main;
 
 import dao.IAdoptable;
 import entity.AdoptionEvent;
+import entity.Cats;
+import entity.Dogs;
 import entity.Donation;
 import entity.Pet;
 import exception.PetShelter;
@@ -9,8 +11,8 @@ import exception.PetShelter;
 public class PetpalApplication {
 
 	public static void main(String[] args) {
-		Pet dog = new Dog("Buddy", 3, "Golden Retriever", "Golden");
-		Pet cat = new Cat("Whiskers", 2, "Siamese", "White");
+		Pet dog = new Dogs();
+		Pet cat = new Cats("Whiskers");
 
 		PetShelter shelter = new PetShelter();
 		shelter.addPet(dog);
@@ -18,8 +20,8 @@ public class PetpalApplication {
 
 		shelter.listAvailablePets();
 
-		Donation cashDonation = new CashDonation("John Doe", 100.0, "2023-01-01");
-		Donation itemDonation = new ItemDonation("Jane Doe", 50.0, "Toys");
+		Donation cashDonation = new Donation("John Doe", 100.0, "2023-01-01");
+		Donation itemDonation = new Donation("Jane Doe", 50.0, "Toys");
 
 		cashDonation.recordDonation();
 		itemDonation.recordDonation();
@@ -31,8 +33,8 @@ public class PetpalApplication {
 
 		adoptionEvent.hostEvent();
 
-		PetShelter shelter = new PetShelter();
+		PetShelter shelter1 = new PetShelter();
 
-		shelter.readPetsFromFile("pets.txt");
+		shelter1.readPetsFromFile("pets.txt");
 	}
 }
