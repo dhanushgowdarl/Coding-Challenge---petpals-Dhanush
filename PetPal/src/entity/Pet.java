@@ -1,5 +1,7 @@
 package entity;
 
+import exception.AdoptionException;
+
 public class Pet {
 	String name;
 	int age;
@@ -44,6 +46,14 @@ public class Pet {
 			throw new IllegalArgumentException("Invalid age. Age must be a positive integer.");
 		}
 		this.age = age;
+	}
+
+	public void adopt() throws AdoptionException {
+		if (name == null || breed == null) {
+			throw new AdoptionException("Cannot adopt pet with missing information.");
+		}
+		// Process adoption logic here
+		System.out.println("Pet " + name + " adopted successfully!");
 	}
 
 	@Override
