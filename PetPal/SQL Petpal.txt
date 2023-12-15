@@ -1,0 +1,32 @@
+CREATE TABLE Pet (
+    PetID INT PRIMARY KEY,
+    Name VARCHAR(255),
+    Age INT,
+    Breed VARCHAR(255)
+);
+
+CREATE TABLE Dog (
+    DogID INT PRIMARY KEY,
+    PetID INT,
+    DogBreed VARCHAR(255),
+    FOREIGN KEY (PetID) REFERENCES Pet(PetID)
+);
+
+CREATE TABLE Cat (
+    CatID INT PRIMARY KEY,
+    PetID INT,
+    CatColor VARCHAR(255),
+    FOREIGN KEY (PetID) REFERENCES Pet(PetID)
+);
+
+CREATE TABLE PetShelter (
+    ShelterID INT PRIMARY KEY,
+    PetID INT,
+    FOREIGN KEY (PetID) REFERENCES Pet(PetID)
+);
+
+CREATE TABLE Donation (
+    DonationID INT PRIMARY KEY,
+    DonorName VARCHAR(255),
+    Amount DECIMAL(10, 2)
+);
