@@ -39,6 +39,13 @@ public class Pet {
 		this.breed = breed;
 	}
 
+	public void setAgeWithValidation(int age) throws IllegalArgumentException {
+		if (age <= 0) {
+			throw new IllegalArgumentException("Invalid age. Age must be a positive integer.");
+		}
+		this.age = age;
+	}
+
 	@Override
 	public String toString() {
 		return "Name :" + name + "age = " + age + "and Breed is " + breed;
