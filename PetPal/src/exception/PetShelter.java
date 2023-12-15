@@ -4,7 +4,7 @@ import java.util.List;
 
 import entity.Pet;
 
-class PetShelter {
+public class PetShelter {
 
 	private List<Pet> availablePets;
 
@@ -27,5 +27,13 @@ class PetShelter {
 				System.out.println("Error: Information missing for a pet.");
 			}
 		}
+	}
+
+	public void readPetsFromFile(String string) {
+
+	}
+
+	public void addPet(Pet dog) {
+
 	}
 }

@@ -5,7 +5,7 @@ public class Pet {
 	int age;
 	String breed;
 
-	public Pet() {
+	public Pet(String string, int i, String string2, String string3) {
 
 	}
 

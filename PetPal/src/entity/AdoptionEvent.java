@@ -5,7 +5,7 @@ import java.util.List;
 
 import dao.IAdoptable;
 
-class AdoptionEvent {
+public class AdoptionEvent {
 	private List<IAdoptable> participants;
 
 	public AdoptionEvent() {
