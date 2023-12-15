@@ -1,6 +1,9 @@
 package entity;
 
+import exception.InsufficientFundsException;
+
 public abstract class Donation {
+	private static final double MIN_DONATION_AMOUNT = 0;
 	private String donorName;
 	private double amount;
 
@@ -24,6 +27,14 @@ public abstract class Donation {
 	}
 
 	public void setAmount(double amount) {
+		this.amount = amount;
+	}
+
+	public void Donation1(String donorName, double amount) throws InsufficientFundsException {
+		if (amount < MIN_DONATION_AMOUNT) {
+			throw new InsufficientFundsException(donorName);
+		}
+		this.donorName = donorName;
 		this.amount = amount;
 	}
 }
